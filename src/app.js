@@ -63,7 +63,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   const indice = repositories.findIndex(item => item.id == id)
 
-  if ( ! indice) {
+  if (indice === -1) {
     return response.status(400).json({ error: 'Repository not found.' })
   }
 
